@@ -33,14 +33,8 @@ class DriveControl
         
         void setRawMotors(rawMotorModes leftMode, uint8_t leftSpeed, rawMotorModes rightMode, uint8_t rightSpeed);
         
-        void setBoost(bool isEnabled);
-        
-        bool isBoosting();
-        
     private:
         bool _isAiming;
-        
-        bool _isBoosting;
 };
 
 #endif

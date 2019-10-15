@@ -8,7 +8,6 @@ DriveDevice _driveControlDrive;
 DriveControl::DriveControl()
 {
     _isAiming = false;
-    _isBoosting = false;
 }
 
 void DriveControl::aimStart()
@@ -52,11 +51,6 @@ void DriveControl::rollStart(uint16_t heading, int16_t speed)
     if (speed < 0)
     {
         flags |= static_cast<uint8_t>(DriveFlags::driveReverse);
-    }
-    
-    if (_isBoosting)
-    {
-        flags |= static_cast<uint8_t>(DriveFlags::boost);
     }
     
     uint8_t velocity = speed < 0 ? static_cast<uint8_t>(speed * -1) : static_cast<uint8_t>(speed);
@@ -120,14 +114,4 @@ void DriveControl::setRawMotors(rawMotorModes leftMode, uint8_t leftSpeed, rawMo
     }
     
     _driveControlDrive.rawMotors(sendLeftMode, leftSpeed, sendRightMode, rightSpeed);
-}
-
-void DriveControl::setBoost(bool isEnabled)
-{
-    _isBoosting = isEnabled;
-}
-
-bool DriveControl::isBoosting()
-{
-    return _isBoosting;
 }
