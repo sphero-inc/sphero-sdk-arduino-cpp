@@ -1,7 +1,7 @@
 #include <SpheroRVR.h>
 
-static void willSleepNotifyCallback(bool rc);
-static void didSleepNotifyCallback(bool rc);
+static void willSleepNotifyCallback(bool isSuccessful);
+static void didSleepNotifyCallback(bool isSuccessful);
 
 void setup() {
     // set up communication with the RVR
@@ -19,12 +19,12 @@ void loop() {
     rvr.poll();
 }
 
-static void willSleepNotifyCallback(bool rc)
+static void willSleepNotifyCallback(bool isSuccessful)
 {
     // put your code here to run when you get a "will sleep" notification
 }
 
-static void didSleepNotifyCallback(bool rc)
+static void didSleepNotifyCallback(bool isSuccessful)
 {
     // put your code here to run when you get a "did sleep" notification
 }
