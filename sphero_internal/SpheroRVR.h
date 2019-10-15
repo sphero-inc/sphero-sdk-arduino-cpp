@@ -1,11 +1,3 @@
-// ************************************************************
-// This file was automatically generated!
-// ID:                      16
-// Name:                    Sphero RVR
-// Prefix:                  RV
-// Command Count:           45
-// ************************************************************
-
 #ifndef RVR_H
 #define RVR_H
 

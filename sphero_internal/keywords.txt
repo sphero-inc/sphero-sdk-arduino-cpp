@@ -1,7 +1,3 @@
-// ************************************************************
-// This file was automatically generated!
-// ************************************************************
-
 MotorStallNotifyReturn_t	KEYWORD1
 MotorFaultNotifyReturn_t	KEYWORD1
 GetMotorFaultStateReturn_t	KEYWORD1
@@ -75,3 +71,16 @@ getStatsId	KEYWORD2
 getProcessorName	KEYWORD2
 getSku	KEYWORD2
 getCoreUpTimeInMilliseconds	KEYWORD2
+getDriveControl	KEYWORD2
+getLedControl	KEYWORD2
+aimStart	KEYWORD2
+aimStop	KEYWORD2
+isAiming	KEYWORD2
+resetHeading	KEYWORD2
+rollStart	KEYWORD2
+rollStop	KEYWORD2
+setHeading	KEYWORD2
+setRawMotors	KEYWORD2
+setBoost	KEYWORD2
+isBoosting	KEYWORD2
+setLeds	KEYWORD2
