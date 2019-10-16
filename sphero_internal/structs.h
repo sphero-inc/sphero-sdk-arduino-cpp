@@ -60,12 +60,12 @@ enum struct LEDs : uint8_t
 	rightStatusIndicationRed = 9, 
 	rightStatusIndicationGreen = 10, 
 	rightStatusIndicationBlue = 11, 
-	batteryDoorFrontRed = 12, 
-	batteryDoorFrontGreen = 13, 
-	batteryDoorFrontBlue = 14, 
-	batteryDoorRearRed = 15, 
-	batteryDoorRearGreen = 16, 
-	batteryDoorRearBlue = 17, 
+	batteryDoorRearRed = 12, 
+	batteryDoorRearGreen = 13, 
+	batteryDoorRearBlue = 14, 
+	batteryDoorFrontRed = 15, 
+	batteryDoorFrontGreen = 16, 
+	batteryDoorFrontBlue = 17, 
 	powerButtonFrontRed = 18, 
 	powerButtonFrontGreen = 19, 
 	powerButtonFrontBlue = 20, 
@@ -81,33 +81,42 @@ enum struct LEDs : uint8_t
 	undercarriageWhite = 30, 
 };
 
+enum struct Processors : uint8_t
+{
+	nordic = 0x1, 
+	st = 0x2, 
+};
+
 // ************************************************************
 // Bitmasks
 // ************************************************************
 
 enum struct DriveFlags : uint8_t
 {
-	driveReverse = 1 << 0, 
-	boost = 1 << 1, 
-	fastTurn = 1 << 2, 
-	leftDirection = 1 << 3, 
-	rightDirection = 1 << 4, 
-	enableDrift = 1 << 5, 
+	none = 0,
+	driveReverse = 1 << 0,
+	boost = 1 << 1,
+	fastTurn = 1 << 2,
+	leftDirection = 1 << 3,
+	rightDirection = 1 << 4,
+	enableDrift = 1 << 5,
 };
 
 enum struct GyroMaxFlags : uint8_t
 {
-	maxPlusX = 1 << 0, 
-	maxMinusX = 1 << 1, 
-	maxPlusY = 1 << 2, 
-	maxMinusY = 1 << 3, 
-	maxPlusZ = 1 << 4, 
-	maxMinusZ = 1 << 5, 
+	none = 0,
+	maxPlusX = 1 << 0,
+	maxMinusX = 1 << 1,
+	maxPlusY = 1 << 2,
+	maxMinusY = 1 << 3,
+	maxPlusZ = 1 << 4,
+	maxMinusZ = 1 << 5,
 };
 
 enum struct LocatorFlags : uint8_t
 {
-	autoCalibrate = 1 << 0, 
+	none = 0,
+	autoCalibrate = 1 << 0,
 };
 
 // ************************************************************
@@ -116,32 +125,32 @@ enum struct LocatorFlags : uint8_t
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	MotorIndexes motorIndex;
 	bool isTriggered;
 } MotorStallNotifyReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	bool isFault;
 } MotorFaultNotifyReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	bool isFault;
 } GetMotorFaultStateReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint8_t flags;
 } GyroMaxNotifyReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint16_t redChannelValue;
 	uint16_t greenChannelValue;
 	uint16_t blueChannelValue;
@@ -150,13 +159,13 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float ambientLightValue;
 } GetAmbientLightSensorValueReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint8_t red;
 	uint8_t green;
 	uint8_t blue;
@@ -166,14 +175,14 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float windingCoilTemperature;
 	float caseTemperature;
 } GetMotorTemperatureReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float leftMotorTemperature;
 	ThermalProtectionStatus leftMotorStatus;
 	float rightMotorTemperature;
@@ -182,7 +191,7 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float leftMotorTemperature;
 	ThermalProtectionStatus leftMotorStatus;
 	float rightMotorTemperature;
@@ -191,31 +200,31 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint8_t percentage;
 } GetBatteryPercentageReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	BatteryVoltageStates state;
 } GetBatteryVoltageStateReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	BatteryVoltageStates state;
 } BatteryVoltageStateChangeNotifyReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float voltage;
 } GetBatteryVoltageInVoltsReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float criticalThreshold;
 	float lowThreshold;
 	float hysteresis;
@@ -223,19 +232,19 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	float amplifierCurrent;
 } GetCurrentSenseAmplifierCurrentReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	char aName[50];
 } GetBluetoothAdvertisingNameReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint16_t major;
 	uint16_t minor;
 	uint16_t revision;
@@ -243,7 +252,7 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint16_t major;
 	uint16_t minor;
 	uint16_t revision;
@@ -251,37 +260,37 @@ typedef struct
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint8_t revision;
 } GetBoardRevisionReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	char macAddress[50];
 } GetMacAddressReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint16_t statsId;
 } GetStatsIdReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	char aName[50];
 } GetProcessorNameReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	char sku[50];
 } GetSkuReturn_t;
 
 typedef struct
 {
-	bool rc;
+	bool isSuccessful;
 	uint64_t upTime;
 } GetCoreUpTimeInMillisecondsReturn_t;
 
@@ -313,9 +322,9 @@ typedef void (*GetBatteryPercentageCallback_t)(GetBatteryPercentageReturn_t *get
 
 typedef void (*GetBatteryVoltageStateCallback_t)(GetBatteryVoltageStateReturn_t *getBatteryVoltageState);
 
-typedef void (*WillSleepNotifyCallback_t)(bool rc);
+typedef void (*WillSleepNotifyCallback_t)(bool isSuccessful);
 
-typedef void (*DidSleepNotifyCallback_t)(bool rc);
+typedef void (*DidSleepNotifyCallback_t)(bool isSuccessful);
 
 typedef void (*BatteryVoltageStateChangeNotifyCallback_t)(BatteryVoltageStateChangeNotifyReturn_t *batteryVoltageStateChangeNotify);
 

@@ -181,7 +181,7 @@ extern "C" void arhGetBatteryPercentageCallback(apiPacket_t *response)
 	
 	GetBatteryPercentageReturn_t getBatteryPercentageReturn;
 	
-	getBatteryPercentageReturn.rc = (response->errorCode == API_SUCCESS);
+	getBatteryPercentageReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -200,7 +200,7 @@ extern "C" void arhGetBatteryVoltageStateCallback(apiPacket_t *response)
 	
 	GetBatteryVoltageStateReturn_t getBatteryVoltageStateReturn;
 	
-	getBatteryVoltageStateReturn.rc = (response->errorCode == API_SUCCESS);
+	getBatteryVoltageStateReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -219,7 +219,7 @@ extern "C" void arhGetBatteryVoltageInVoltsCallback(apiPacket_t *response)
 	
 	GetBatteryVoltageInVoltsReturn_t getBatteryVoltageInVoltsReturn;
 	
-	getBatteryVoltageInVoltsReturn.rc = (response->errorCode == API_SUCCESS);
+	getBatteryVoltageInVoltsReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -238,7 +238,7 @@ extern "C" void arhGetBatteryVoltageStateThresholdsCallback(apiPacket_t *respons
 	
 	GetBatteryVoltageStateThresholdsReturn_t getBatteryVoltageStateThresholdsReturn;
 	
-	getBatteryVoltageStateThresholdsReturn.rc = (response->errorCode == API_SUCCESS);
+	getBatteryVoltageStateThresholdsReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -259,7 +259,7 @@ extern "C" void arhGetCurrentSenseAmplifierCurrentCallback(apiPacket_t *response
 	
 	GetCurrentSenseAmplifierCurrentReturn_t getCurrentSenseAmplifierCurrentReturn;
 	
-	getCurrentSenseAmplifierCurrentReturn.rc = (response->errorCode == API_SUCCESS);
+	getCurrentSenseAmplifierCurrentReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -280,9 +280,9 @@ extern "C" void achWillSleepNotify(apiPacket_t *command, apiPacket_t *response)
 		return;
 	}
 	
-	bool rc = true;
+	bool isSuccessful = true;
 	
-	willSleepNotifyCallback(rc);
+	willSleepNotifyCallback(isSuccessful);
 }
 
 extern "C" void achDidSleepNotify(apiPacket_t *command, apiPacket_t *response)
@@ -292,9 +292,9 @@ extern "C" void achDidSleepNotify(apiPacket_t *command, apiPacket_t *response)
 		return;
 	}
 	
-	bool rc = true;
+	bool isSuccessful = true;
 	
-	didSleepNotifyCallback(rc);
+	didSleepNotifyCallback(isSuccessful);
 }
 
 extern "C" void achBatteryVoltageStateChangeNotify(apiPacket_t *command, apiPacket_t *response)
@@ -306,7 +306,7 @@ extern "C" void achBatteryVoltageStateChangeNotify(apiPacket_t *command, apiPack
 	
 	BatteryVoltageStateChangeNotifyReturn_t batteryVoltageStateChangeNotifyReturn;
 	
-	batteryVoltageStateChangeNotifyReturn.rc = true;
+	batteryVoltageStateChangeNotifyReturn.isSuccessful = true;
 	
 	batteryVoltageStateChangeNotifyReturn.state = static_cast<BatteryVoltageStates>(unpackUint8(command));
 	batteryVoltageStateChangeNotifyCallback(&batteryVoltageStateChangeNotifyReturn);

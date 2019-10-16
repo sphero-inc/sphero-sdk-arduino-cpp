@@ -134,7 +134,7 @@ extern "C" void arhGetMainApplicationVersionCallback(apiPacket_t *response)
 	
 	GetMainApplicationVersionReturn_t getMainApplicationVersionReturn;
 	
-	getMainApplicationVersionReturn.rc = (response->errorCode == API_SUCCESS);
+	getMainApplicationVersionReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -155,7 +155,7 @@ extern "C" void arhGetBootloaderVersionCallback(apiPacket_t *response)
 	
 	GetBootloaderVersionReturn_t getBootloaderVersionReturn;
 	
-	getBootloaderVersionReturn.rc = (response->errorCode == API_SUCCESS);
+	getBootloaderVersionReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -176,7 +176,7 @@ extern "C" void arhGetBoardRevisionCallback(apiPacket_t *response)
 	
 	GetBoardRevisionReturn_t getBoardRevisionReturn;
 	
-	getBoardRevisionReturn.rc = (response->errorCode == API_SUCCESS);
+	getBoardRevisionReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -195,7 +195,7 @@ extern "C" void arhGetMacAddressCallback(apiPacket_t *response)
 	
 	GetMacAddressReturn_t getMacAddressReturn;
 	
-	getMacAddressReturn.rc = (response->errorCode == API_SUCCESS);
+	getMacAddressReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -214,7 +214,7 @@ extern "C" void arhGetStatsIdCallback(apiPacket_t *response)
 	
 	GetStatsIdReturn_t getStatsIdReturn;
 	
-	getStatsIdReturn.rc = (response->errorCode == API_SUCCESS);
+	getStatsIdReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -233,7 +233,7 @@ extern "C" void arhGetProcessorNameCallback(apiPacket_t *response)
 	
 	GetProcessorNameReturn_t getProcessorNameReturn;
 	
-	getProcessorNameReturn.rc = (response->errorCode == API_SUCCESS);
+	getProcessorNameReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -252,7 +252,7 @@ extern "C" void arhGetSkuCallback(apiPacket_t *response)
 	
 	GetSkuReturn_t getSkuReturn;
 	
-	getSkuReturn.rc = (response->errorCode == API_SUCCESS);
+	getSkuReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -271,7 +271,7 @@ extern "C" void arhGetCoreUpTimeInMillisecondsCallback(apiPacket_t *response)
 	
 	GetCoreUpTimeInMillisecondsReturn_t getCoreUpTimeInMillisecondsReturn;
 	
-	getCoreUpTimeInMillisecondsReturn.rc = (response->errorCode == API_SUCCESS);
+	getCoreUpTimeInMillisecondsReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{

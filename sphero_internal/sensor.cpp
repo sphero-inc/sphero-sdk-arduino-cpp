@@ -206,7 +206,7 @@ extern "C" void arhGetRgbcSensorValuesCallback(apiPacket_t *response)
 	
 	GetRgbcSensorValuesReturn_t getRgbcSensorValuesReturn;
 	
-	getRgbcSensorValuesReturn.rc = (response->errorCode == API_SUCCESS);
+	getRgbcSensorValuesReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -228,7 +228,7 @@ extern "C" void arhGetAmbientLightSensorValueCallback(apiPacket_t *response)
 	
 	GetAmbientLightSensorValueReturn_t getAmbientLightSensorValueReturn;
 	
-	getAmbientLightSensorValueReturn.rc = (response->errorCode == API_SUCCESS);
+	getAmbientLightSensorValueReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -247,7 +247,7 @@ extern "C" void arhGetMotorTemperatureCallback(apiPacket_t *response)
 	
 	GetMotorTemperatureReturn_t getMotorTemperatureReturn;
 	
-	getMotorTemperatureReturn.rc = (response->errorCode == API_SUCCESS);
+	getMotorTemperatureReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -267,7 +267,7 @@ extern "C" void arhGetMotorThermalProtectionStatusCallback(apiPacket_t *response
 	
 	GetMotorThermalProtectionStatusReturn_t getMotorThermalProtectionStatusReturn;
 	
-	getMotorThermalProtectionStatusReturn.rc = (response->errorCode == API_SUCCESS);
+	getMotorThermalProtectionStatusReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -293,7 +293,7 @@ extern "C" void achGyroMaxNotify(apiPacket_t *command, apiPacket_t *response)
 	
 	GyroMaxNotifyReturn_t gyroMaxNotifyReturn;
 	
-	gyroMaxNotifyReturn.rc = true;
+	gyroMaxNotifyReturn.isSuccessful = true;
 	
 	gyroMaxNotifyReturn.flags = unpackUint8(command);
 	gyroMaxNotifyCallback(&gyroMaxNotifyReturn);
@@ -308,7 +308,7 @@ extern "C" void achColorDetectionNotify(apiPacket_t *command, apiPacket_t *respo
 	
 	ColorDetectionNotifyReturn_t colorDetectionNotifyReturn;
 	
-	colorDetectionNotifyReturn.rc = true;
+	colorDetectionNotifyReturn.isSuccessful = true;
 	
 	colorDetectionNotifyReturn.red = unpackUint8(command);
 	colorDetectionNotifyReturn.green = unpackUint8(command);
@@ -327,7 +327,7 @@ extern "C" void achMotorThermalProtectionStatusNotify(apiPacket_t *command, apiP
 	
 	MotorThermalProtectionStatusNotifyReturn_t motorThermalProtectionStatusNotifyReturn;
 	
-	motorThermalProtectionStatusNotifyReturn.rc = true;
+	motorThermalProtectionStatusNotifyReturn.isSuccessful = true;
 	
 	motorThermalProtectionStatusNotifyReturn.leftMotorTemperature = unpackFloat(command);
 	motorThermalProtectionStatusNotifyReturn.leftMotorStatus = static_cast<ThermalProtectionStatus>(unpackUint8(command));

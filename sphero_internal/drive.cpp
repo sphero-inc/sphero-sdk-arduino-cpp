@@ -144,7 +144,7 @@ extern "C" void arhGetMotorFaultStateCallback(apiPacket_t *response)
 	
 	GetMotorFaultStateReturn_t getMotorFaultStateReturn;
 	
-	getMotorFaultStateReturn.rc = (response->errorCode == API_SUCCESS);
+	getMotorFaultStateReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{
@@ -167,7 +167,7 @@ extern "C" void achMotorStallNotify(apiPacket_t *command, apiPacket_t *response)
 	
 	MotorStallNotifyReturn_t motorStallNotifyReturn;
 	
-	motorStallNotifyReturn.rc = true;
+	motorStallNotifyReturn.isSuccessful = true;
 	
 	motorStallNotifyReturn.motorIndex = static_cast<MotorIndexes>(unpackUint8(command));
 	motorStallNotifyReturn.isTriggered = unpackBool(command);
@@ -183,7 +183,7 @@ extern "C" void achMotorFaultNotify(apiPacket_t *command, apiPacket_t *response)
 	
 	MotorFaultNotifyReturn_t motorFaultNotifyReturn;
 	
-	motorFaultNotifyReturn.rc = true;
+	motorFaultNotifyReturn.isSuccessful = true;
 	
 	motorFaultNotifyReturn.isFault = unpackBool(command);
 	motorFaultNotifyCallback(&motorFaultNotifyReturn);

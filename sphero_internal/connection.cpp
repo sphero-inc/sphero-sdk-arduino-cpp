@@ -57,7 +57,7 @@ extern "C" void arhGetBluetoothAdvertisingNameCallback(apiPacket_t *response)
 	
 	GetBluetoothAdvertisingNameReturn_t getBluetoothAdvertisingNameReturn;
 	
-	getBluetoothAdvertisingNameReturn.rc = (response->errorCode == API_SUCCESS);
+	getBluetoothAdvertisingNameReturn.isSuccessful = (response->errorCode == API_SUCCESS);
 	
 	if (response->errorCode == API_SUCCESS)
 	{

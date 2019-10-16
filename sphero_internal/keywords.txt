@@ -81,6 +81,4 @@ rollStart	KEYWORD2
 rollStop	KEYWORD2
 setHeading	KEYWORD2
 setRawMotors	KEYWORD2
-setBoost	KEYWORD2
-isBoosting	KEYWORD2
 setLeds	KEYWORD2
