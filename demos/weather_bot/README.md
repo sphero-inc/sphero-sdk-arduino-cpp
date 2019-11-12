@@ -1,3 +1,5 @@
+![close up]
+
 # WeatherBot
 Turn your RVR into your very own WeatherBot! While it can't control the weather, it can measure and show the current temperature on an alphanumeric display, and also sets the LEDs on your RVR to a color that corresponds to the temperature. This example will show you how to incorporate several different technologies into a single project. Consequently, it requires lots of assembly! Take your time and follow the instructions carefully, especially if you haven't put together a circuit before!
 
@@ -30,7 +32,7 @@ Once you have your alphanumeric display assembled, you can start putting togethe
 
 ![wiring diagram]
 
-It looks like a lot! If you're cutting and stripping your own wires, this is the most time-consuming part of the project. So take your time, follow the diagram carefully, and be patient! When you're done you should have something like this (except it won't be lighting up just yet!):
+It looks like a lot! If you're cutting and stripping your own wires, this is the most time-consuming part of the project. So take your time, follow the diagram carefully, and be patient! When you're done you should have something like this:
 
 ![finished circuit]
 
@@ -60,6 +62,7 @@ See if you can build a better bot! Here are some ideas we had for ways you could
 * Change up the code to have the LEDs turn every color of the rainbow instead of just ranging from red to blue!
 
 
+[close up]: circuit_mounted_close_up.jpg
 [RVR]: https://www.sphero.com/rvr
 [Arduino Uno]: https://store.arduino.cc/usa/arduino-uno-rev3
 [HUZZAH]: https://www.adafruit.com/product/3046
@@ -73,7 +76,7 @@ See if you can build a better bot! Here are some ideas we had for ways you could
 [wire cutters]: https://www.sparkfun.com/products/8794
 [Here's the tutorial]: https://learn.adafruit.com/14-segment-alpha-numeric-led-featherwing/assembly
 [wiring diagram]: weather_bot_wire_diagram.png
-[finished circuit]: circuit_close_up.jpg
+[finished circuit]: circuit_off.jpg
 [Arduino IDE]: https://www.arduino.cc/en/main/software
 [this tutorial]: https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide
 [final_product]: rvr.jpg
