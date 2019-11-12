@@ -45,7 +45,9 @@ Since we're working with two different development boards (Arduino Uno and Adafr
 
 Download the `weather_bot.ino` file and open it in the Arduino IDE. You can find explanations of the code in the comments inside the file, so here we'll just focus on uploading it to your Arduino. Under the **Tools** tab, be sure your **Board** is set to "Arduino/Genuino Uno". Also make sure your **Port** is set to the USB port you're going to plug your Arduino into. Connect your Arduino to your computer using the A/B USB Cable, then click the **Upload** button in the top left corner of the IDE. Wait a few seconds until the IDE tells you it's done uploading, and then you're good to go!
 
-Using the Feather with the Arduino IDE is a little more complicated. Follow [this tutorial] to get everything set up the way it needs to be. Once that's done, the upload process is exactly the same! Just use the Micro B USB cable this time instead of the A/B cable.
+Using the Feather with the Arduino IDE is a little more complicated. Follow [this tutorial] to get everything set up. Once that's done, the upload process is exactly the same! Just use the Micro B USB cable this time instead of the A/B cable.
+
+*(Psst! If the code comments aren't enough for you, here are some links with more info about [DHT22 Usage] and [Alphanumeric Display Usage].)*
 
 ## Bringing It All Together
 Now that our circuit is built and our dev boards are flashed with code, we can finally use our WeatherBot! All you need to do is plug the Arduino into RVR's USB port using your A/B cable, and turn on the RVR! It'll take a few seconds before the RVR's LEDs change colors, so be patient. It may also take several seconds before you see the alphanumeric display light up. If it's been a while and you still don't see anything, try hitting the reset button on the Feather and wait another several seconds. Hitting the reset button on the Arduino can also help if that didn't work.
@@ -79,4 +81,6 @@ See if you can build a better bot! Here are some ideas we had for ways you could
 [finished circuit]: circuit_off.jpg
 [Arduino IDE]: https://www.arduino.cc/en/main/software
 [this tutorial]: https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide
+[DHT22 Usage]: https://learn.adafruit.com/dht/using-a-dhtxx-sensor
+[Alphanumeric Display Usage]: https://learn.adafruit.com/14-segment-alpha-numeric-led-featherwing/usage
 [final_product]: rvr.jpg
